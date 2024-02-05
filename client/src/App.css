@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap');
+
+* {
+  background-color: black;
+  font-family: 'Anonymous Pro', monospace;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #FFF;
+  text-align: center;
+  font-family: "Anonymous Pro";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 39px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 39px;
+}
+
+.div_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+input[type=email], [type=password], [type=text], [type=date], [type=file] {
+  background-color: white;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 15px;
+  width: 450px;
+  height: 50px;
+  border: none;
+  font-size: 20px;
+  color: grey;
+}
+
+input {outline:none;}
+
+label {
+  cursor: pointer;
+  background-color: white;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 15px;
+  width: 450px;
+  height: 50px;
+  border: none;
+  font-size: 20px;
+  color: grey;
+  display: flex;
+  align-items: center;
+}
+
+#file {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+button {
+  background-color: white;
+  padding: 18px 65px;
+  border-radius: 20px;
+  font-size: 24px;
+}
+
+input[type=submit] {
+  background-color: white;
+  padding: 18px 65px;
+  border-radius: 20px;
+  font-size: 24px;
+}
+
+.footer_a {
+  color: #FFF;
+  text-align: center;
+  font-family: "Anonymous Pro";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.footer_a a {
+  color: #FFF;
+  text-decoration: underline;
+}
+
+.main_profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.main_profile a {
+  gap: 20px;
+  color: #FFF;
+  text-align: center;
+  font-family: "Anonymous Pro";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: underline;
+}
+
+.logout {
+  color: #FF3A3A;
+  text-align: center;
+  font-family: "Anonymous Pro";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+
+.my_request {
+  background: white;
+  padding: 15px;
+  display: flex;
+  gap: 10px;
+  border-radius: 15px;
+  flex-direction: column;
+  font-family: "Anonymous Pro";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 450px;
+}
+
+.date_my_request {
+  color: #8E8E8E;
+  background: white;
+}
+
+.status_my_request {
+  color: #000000;
+  background: white;
+}
+
+img {
+  background: white;
+  width: 100%;
+  height: 100%;
+}
+
+.status_request {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+}
+
+input[type=button] {
+  background: transparent;
+  border: none;
+  font-family: "Anonymous Pro";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+}
+
+#accept {
+  padding: 0;
+  margin: 0;
+  color: #00C236;
+  background: white;
+  border: none;
+  font-family: "Anonymous Pro";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+#not_accept {
+  padding: 0;
+  margin: 0;
+  color: #FF3A3A;
+  background: white;
+  border: none;
+  font-family: "Anonymous Pro";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+  border-radius: 0;
+}
