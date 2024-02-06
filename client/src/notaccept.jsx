@@ -1,19 +1,23 @@
 import { useState } from 'react'
 import './App.css'
+import { useSelector } from 'react-redux'
 
-function NotAccept(props) {
+function Accept(props) {
   const [status, setStatus] = useState('')
+
+  const token = useSelector((state) => state.auth.token)
 
   async function add(status) {
     const data = {
-      'status': 'Принята',
+      'status': 'Отклонена',
       id: props.id
     }
-    await fetch("http://localhost:3000/not_accept/", {
+    await fetch("http://localhost:3000/edit_status/", {
       method: 'POST',
       mode: 'cors',
       headers: {
         "Content-Type": "application/json",
+        'Authorization': `Bearer ${token}`
       },
       body: JSON.stringify(data)
     });
@@ -23,14 +27,10 @@ function NotAccept(props) {
 
   return (
     <>
-      <form onSubmit={(e) => {
-        e.preventDefault()
-        console.log("asjdsadjiasdj")
-        add(status)
-
-      }}>
+      <form>
         <div>
-          <input type="submit" id='not_accept' value="Отклонить" />
+          <input onClick={(e) => {e.preventDefault()
+          add()}} type="submit" id='not_accept' value="Отклонить" />
         </div>
       </form>
 
@@ -38,4 +38,4 @@ function NotAccept(props) {
   )
 }
 
-export default NotAccept
+export default Accept
