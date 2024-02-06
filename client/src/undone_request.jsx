@@ -10,7 +10,6 @@ function Undone_request() {
   const [car_number, setCarNumber] = useState('')
   const [imageValue, setImageValue] = useState('')
   const [image, setImage] = useState()
-  const [status, setStatus] = useState('')
 
   const [my_requests, setMyRequests] = useState([])
 
@@ -26,26 +25,8 @@ function Undone_request() {
       .then(data => setMyRequests(data))
   }, [])
 
-  async function add(status) {
-    const data = {
-      'status': 'Принята',
-      id: props.id
-    }
-    await fetch("http://localhost:3000/accept/", {
-      method: 'POST',
-      mode: 'cors',
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data)
-    });
-    setStatus('')
-
-  }
-
   return (
     <>
-
     {
         my_requests.map(el =>
           
@@ -56,16 +37,7 @@ function Undone_request() {
       <a className="status_my_request">Номер автомобиля: {el.car_number}</a>
       <img src={el.image} />
       <div className="status_request">
-      <form onSubmit={(e) => {
-        e.preventDefault()
-        console.log("asjdsadjiasdj")
-        add(status)
-
-      }}>
-        <div>
-          <input type="submit" id='accept' value="Принять" />
-        </div>
-      </form>
+        <Accept id={el.violation_id} />
         <NotAccept />
       </div>
     </div>
