@@ -104,28 +104,12 @@ app.post("/edit_admin_info/", roleMiddleware(['ADMIN']), async (req, res) => {
     res.sendStatus(200)
 })
 
-app.post("/accept/", roleMiddleware(['ADMIN']), async (req, res) => {
-    const { status} = req.body
-    console.log(req.headers.authorization);
-    console.log(status);
-    const token = req.headers.authorization.split(' ')[1]
-    const {id} = jwt.verify(token, "SECRET_KEY")
-    await sql`UPDATE violations SET status = 'Принята' where violation_id = ${id}`
+app.post("/edit_status/", roleMiddleware(['ADMIN']), async (req, res) => {
+    const { id, status } = req.body
+    console.log(id);
+    await sql`UPDATE violations SET status = ${status} where violation_id = ${id}`
     res.sendStatus(200)
 })
-
-
-
-app.post("/not_accept/", roleMiddleware(['ADMIN']), async (req, res) => {
-    const { status} = req.body
-    console.log(req.headers.authorization);
-    console.log(status);
-    const token = req.headers.authorization.split(' ')[1]
-    const {id} = jwt.verify(token, "SECRET_KEY")
-    const data = await sql`UPDATE violations SET status = 'Отклонена' where violation_id = ${id}`
-    res.sendStatus(200)
-})
-
 
 //функция старта приложения
 const start = async () => {
